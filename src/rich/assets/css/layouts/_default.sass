@@ -1,4 +1,9 @@
 html.default
+
+    .col-content
+        float: right
+        padding-left: 40px
+
     +size-md
         .col-content
             width: 72%
@@ -13,6 +18,7 @@ html.default
         .col-content
             float: none
             width: 100%
+
 
         .col-menu
             position: fixed !important
@@ -87,10 +93,11 @@ html.default
                 transform: translate(0,0)
 
 .tsd-page-title
-    padding: 70px 0 20px 0
-    margin: 0 0 40px 0
-    background: $COLOR_PANEL
-    box-shadow: 0 0 5px rgba(#000, 0.35)
+    margin: 10px 0 10px
+    padding: 10px 0 10px
+    background: #fff
+    border: 1px solid #eee
+    border-width: 1px 0
 
     h1
         margin: 0

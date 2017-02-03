@@ -13,8 +13,6 @@
         +INDENT($DEPTH, $BASE, $STEP)
 
 .tsd-navigation
-    padding: 0 0 0 40px
-
     a
         display: block
         padding-top: 2px
@@ -53,7 +51,7 @@
 // </nav>
 //
 .tsd-navigation.primary
-    padding-bottom: 40px
+    padding-bottom: 10px
 
     a
         display: block
@@ -132,9 +130,16 @@
 
 // Sticky menu setup
 //
+
+
 .menu-sticky-wrap
+
+    .scroll-nav
+        height: calc(100vh - 195px)
+        overflow: auto
+
     +size-md-lg
-        position: static
+        position: fixed
 
         .no-csspositionsticky &
             &.sticky
