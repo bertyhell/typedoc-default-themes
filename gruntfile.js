@@ -78,7 +78,7 @@ module.exports = function (grunt) {
       files.push({
         expand: true,
         cwd: 'src/' + theme + '/assets/css',
-        src: '**/*.sass',
+        src: '**/*.scss',
         dest: 'bin/' + theme + '/assets/css',
         ext: '.css'
       });
@@ -194,6 +194,17 @@ module.exports = function (grunt) {
         files: ['src/minimal/layouts/default.hbs'],
         tasks: ['string-replace:themeMinimal']
       }
+    },
+
+    'sass-convert': {
+      options: {
+        from: 'sass',
+        to: 'scss'
+      },
+      files: {
+        src: ['src/**/*.sass'],
+        dest: '.'
+      }
     }
   });
 
@@ -205,8 +216,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-string-replace');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-ts');
+  grunt.loadNpmTasks('grunt-sass-convert');
 
   grunt.registerTask('css', ['sass', 'postcss']);
   grunt.registerTask('js', ['ts:allThemes', 'uglify']);
   grunt.registerTask('default', ['copy', 'css', 'js', 'string-replace']);
+
+
+  grunt.registerTask('making-sass-great-again', ['sass-convert'])
 };
