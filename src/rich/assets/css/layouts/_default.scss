@@ -1,5 +1,6 @@
 html.default {
   .col-content {
+    background-color: #f7f7f7;
     float: right;
     padding-left: 40px;
   }
@@ -116,11 +117,7 @@ html.default {
 }
 
 .tsd-page-title {
-  margin: 10px 0 10px;
-  padding: 10px 0 10px;
-  background: #fff;
-  border: 1px solid #eee;
-  border-width: 1px 0;
+  margin: 10px 15px;
 
   h1 {
     margin: 0;

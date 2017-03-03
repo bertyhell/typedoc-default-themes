@@ -5,8 +5,7 @@
     & li {
       @include INDENT($DEPTH, $BASE, $STEP, $PROGRESS - 1);
     }
-  }
-  @else {
+  } @else {
     & a {
       padding-left: #{$BASE + $STEP * ($DEPTH - 1)}px;
     }
@@ -24,13 +23,12 @@
     display: block;
     padding-top: 2px;
     padding-bottom: 2px;
-    border-left: 2px solid transparent;
-    color: $COLOR_TEXT;
     text-decoration: none;
-    transition: border-left-color 0.1s;
+    font-size: 13px;
+    color: #b3b3b3;
 
     &:hover {
-      text-decoration: underline;
+      background-color: #4e4a4a;
     }
   }
 
@@ -79,8 +77,6 @@
   }
 
   li {
-    border-top: 1px solid $COLOR_PANEL_DIVIDER;
-
     &.current > a {
       font-weight: bold;
     }
@@ -156,9 +152,20 @@
 //
 
 .menu-sticky-wrap {
+  background: #343131;
+  padding: 0;
+
+  > div {
+  }
+
   .scroll-nav {
     height: calc(100vh - 195px);
     overflow: auto;
+  }
+
+  header {
+    background-color: #2980B9;
+    color: white;
   }
 
   @include size-md-lg {
