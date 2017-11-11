@@ -1,1 +1,1 @@
-typedoc --theme ../typedoc-default-themes/bin/rich --out doc --mode modules --tsconfig ../appshells/tsconfig.json --target ES6 ../appshells/src/
+typedoc --theme ../typedoc-default-themes/bin/rich --out doc --mode file --tsconfig ../appshells/tsconfig.json --target ES6 ../appshells/src/

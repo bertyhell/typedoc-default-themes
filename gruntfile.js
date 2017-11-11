@@ -91,7 +91,7 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     ts: {
       options: {
-        sourceMap: false,
+        sourceMap: true,
         module: 'amd',
         basePath: 'themes',
         declaration: false
