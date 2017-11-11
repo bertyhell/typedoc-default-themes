@@ -1,8 +1,8 @@
 module.exports = function (grunt) {
-  var themes = ['default', 'rich'];
+  let themes = ['default', 'rich'];
 
   function tsFiles() {
-    var files = {};
+    let files = {};
 
     themes.forEach(theme => {
       files['src/' + theme + '/assets/js/main.js'] = ['src/' + theme + '/assets/js/src/**/*.ts'];
@@ -12,7 +12,7 @@ module.exports = function (grunt) {
   }
 
   function uglifyFiles() {
-    var files = {};
+    let files = {};
 
     themes.forEach(theme => {
       files['src/' + theme + '/assets/js/main.js'] = [
@@ -28,13 +28,13 @@ module.exports = function (grunt) {
   }
 
   function copyFiles() {
-    var files = [];
+    let files = [];
 
     themes.forEach(theme => {
       files.push({
         expand: true,
         cwd: 'src/' + theme,
-        src: ['**/*.hbs', '**/*.png'],
+        src: ['**/*.hbs', '**/*.png', 'assets/js/main.js'],
         dest: 'bin/' + theme
       });
     });
@@ -43,18 +43,18 @@ module.exports = function (grunt) {
   }
 
   function replacements() {
-    var replacements = [];
+    let replacements = [];
 
     themes.forEach(theme => {
       replacements.push({
         pattern: /{{ CSS }}/g,
         replacement: function () {
-          var css = grunt.file.read('bin/' + theme + '/assets/css/main.css');
+          let css = grunt.file.read('bin/' + theme + '/assets/css/main.css');
           return css.replace(/url\(([^)]*)\)/g, function (match, file) {
-            if (match.indexOf(':') != -1) return match;
-            var path = require('path'), fs = require('fs');
-            var file = path.resolve('bin/' + theme + '/assets/css', file);
-            var data = fs.readFileSync(file, 'base64');
+            if (match.indexOf(':') !== -1) return match;
+            let path = require('path'), fs = require('fs');
+            file = path.resolve('bin/' + theme + '/assets/css', file);
+            let data = fs.readFileSync(file, 'base64');
             return 'url(data:image/png;base64,' + data + ')';
           });
         }
@@ -72,7 +72,7 @@ module.exports = function (grunt) {
   }
 
   function sassFiles() {
-    var files = [];
+    let files = [];
 
     themes.forEach(theme => {
       files.push({

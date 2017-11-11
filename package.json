@@ -41,9 +41,9 @@
     "grunt-postcss": "^0.8.0",
     "grunt-sass-convert": "^0.3.0",
     "grunt-string-replace": "^1.0.0",
-    "grunt-ts": "^5.5.1",
+    "grunt-ts": "^6.0.0-beta.17",
     "rimraf": "^2.5.4",
-    "typescript": "2.1.5"
+    "typescript": "^2.6.1"
   },
   "keywords": [
     "typescript",
